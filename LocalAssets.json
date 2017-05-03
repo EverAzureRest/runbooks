@@ -1,0 +1,104 @@
+{
+  "Variable": [
+    {
+      "Value": "https://eus2-agentservice-prod-1.azure-automation.net/accounts/d506ffba-1bf5-409d-a317-751a2c68f0d4",
+      "Encrypted": false,
+      "Name": "dscregistrationurl",
+      "LastModified": "2016-06-23 15:38:40Z"
+    },
+    {
+      "Value": "55a750e9-a324-41b8-ae9f-31cd1efc5be2",
+      "Encrypted": false,
+      "Name": "mmawsid",
+      "LastModified": "2016-06-23 15:38:41Z"
+    },
+    {
+      "Value": "LocalAdmin",
+      "Encrypted": false,
+      "Name": "vmAdminU",
+      "LastModified": "2016-06-23 20:13:22Z"
+    },
+    {
+      "Value": "lab.contoso.com",
+      "Encrypted": false,
+      "Name": "ProdDomain",
+      "LastModified": "2016-08-17 16:17:35Z"
+    },
+    {
+      "Value": "EastUS2",
+      "Encrypted": false,
+      "Name": "ProdLocation",
+      "LastModified": "2016-08-17 16:17:36Z"
+    },
+    {
+      "Value": "eus2jorsmithp",
+      "Encrypted": false,
+      "Name": "ProdPremiumSA",
+      "LastModified": "2016-08-17 16:17:37Z"
+    },
+    {
+      "Value": "eus2jorsmith",
+      "Encrypted": false,
+      "Name": "ProdStandardSA",
+      "LastModified": "2016-08-17 16:17:38Z"
+    },
+    {
+      "Value": "default",
+      "Encrypted": false,
+      "Name": "ProdSubnetName",
+      "LastModified": "2016-08-17 16:17:39Z"
+    },
+    {
+      "Value": "jorsmith-labsub1",
+      "Encrypted": false,
+      "Name": "ProdSubscription",
+      "LastModified": "2016-08-17 16:17:40Z"
+    },
+    {
+      "Value": "ProdVnet",
+      "Encrypted": false,
+      "Name": "ProdVnetName",
+      "LastModified": "2016-08-17 16:17:41Z"
+    },
+    {
+      "Value": "EastUS2-NW",
+      "Encrypted": false,
+      "Name": "ProdVnetRG",
+      "LastModified": "2016-08-17 16:17:42Z"
+    },
+    {
+      "Value": "2012-R2-Datacenter",
+      "Encrypted": false,
+      "Name": "ProdWSOSVer",
+      "LastModified": "2016-08-17 16:17:43Z"
+    },
+    {
+      "Value": "2016-Datacenter",
+      "Encrypted": false,
+      "Name": "ProdATOSVer",
+      "LastModified": "2016-10-28 07:52:56Z"
+    }
+  ],
+  "Certificate": [
+    {
+      "ValueFields": null,
+      "Thumbprint": "DB4550EF1361C2C3E632A252E62E49B1A0A5860E",
+      "CertPath": null,
+      "Password": null,
+      "Exportable": false,
+      "Encrypted": false,
+      "Name": "Connection",
+      "LastModified": "2015-12-23 17:02:26Z"
+    },
+    {
+      "ValueFields": null,
+      "Thumbprint": "DB4550EF1361C2C3E632A252E62E49B1A0A5860E",
+      "CertPath": null,
+      "Password": null,
+      "Exportable": false,
+      "Encrypted": false,
+      "Name": "ConnectionPK",
+      "LastModified": "2015-12-23 17:04:45Z"
+    }
+  ]
+}

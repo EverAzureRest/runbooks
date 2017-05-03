@@ -1,0 +1,72 @@
+{
+  "PSCredential": [
+    {
+      "Username": "powerhell\\exec",
+      "Password": "G4sAg6w/13TugWS1OrqKd2cx6RcJTC34R+fB/D/mjHdPTzJnaVC6uFPTrC3C71z/oY51Z1QCEcy5/s5Nkzxh3mIwr8dnoevkvGG4F+H7s0TXlEu0IWS3igZ6dDxJbPsRI0BFR0RJVpijnJtWDqm79IOOqphBjh9CKYYoRzEdrbHmM76dKvMn4EnTLn0x1QaP/zKDKcKzaPZ/TEzQEXGGq/k1uxKgypsyP6Ddq1oebqIFbgJ8tkkGKll89Y8TpmQa4/9TCCJhD7luJ7pNfARu4+2Rin9n/R8jt8lKG9bY12lJJ/l8SOqq15bGBuBMgVng4Kz4/SWAuGahYkLBVA7Kuw==",
+      "Name": "DomainAutomation",
+      "LastModified": "2016-05-04 20:37:00Z"
+    },
+    {
+      "Username": "sclabapkj6n2tobyrs",
+      "Password": "V6yQnj3juH5BADtOJV4ROSAxWSFSs2/+b8CwGpROVlAbCFu0jmimIybhdDUe2VBh0eOZYkrJyrMG/DrWHPBTC2onnpDprZsvqAX9mcdSXMS4Ek3XpWmlCb+oXxooRjmWg+FUTRlBRvZ7uv8fI3/iinDUjqTua2T73YK5xr25d/Ko4tcT4juSr3USo5Mh+xfuk+4vZAKQzfuFMVYs77stBN2+FyGfARip6IvRB/bQW20wvpuFOjYgfM7Up18D9/I/9mtuqBnNqRL5EMzofGxdAklU3n3Epi2JISPKIB10ZE67C3A/QA0J8RTskiMk7unPc13qUTTP/gHrhQqbsW8+OA==",
+      "Name": "StorageAcct",
+      "LastModified": "2016-05-04 22:03:36Z"
+    },
+    {
+      "Username": "domain\\sqlsetup",
+      "Password": "YeOxsn4/8O6efRBP1avcJZPj4hmtN4S94yuvjPJl6Jebl7vX4JH5/p4GHjdIGdymeHWLahdB/reyjXr9+rJGmd5wBU1gbZkmncrER3rFBI5yEVTbK2cKt4DH9uawC7vj6dgHnuU4duSFYr2JVcYugzy+4LeX2I5LkloIbJWQ4mWuHZexaK92EiS6VYVDqsqV9/jgHZ37X0FD9VU7Rp67D5uOzq6jS0wVTG4lbII/90Pz+V4efwF4W8DVkcPqiwA3wXNi4WYuvrUBraVwWnQETSncG2brgUteS3VN7LTLmM+xMWOb0DCDEi0WNdEwpQNoy39icCD7C36rhep+hFz6ag==",
+      "Name": "SQLSetupAcct",
+      "LastModified": "2016-06-02 11:35:21Z"
+    },
+    {
+      "Username": "powerhell\\join",
+      "Password": "lemQ4iRlhkh4iUxx7wzoN3ckS8iP5XeAmfAnygQtWrUxk8zCRaFMrFTHDnQTfgFpX/dcv0pPHSK8SPJOYA+p1DTo996Hyei8yKa9oTFd6Fuv7eguw5fzjPaV6ivaCPNn9OYgK/2N43YwgwaWQw0h718gNUJu5YTfr0WmT5yVz9I7xMV5XVXLUSZWA9N7SNSdGskLudlcgBArUuTPpmq0R6hSoxMTizkQ/h6P9rjUm/OAJxwbAcY55DgvBTG32d4LmA1W0CQaGisZUAupUTorywJUNobi+3MTtQepSyEVanwS/HoNVx1V2vPdxFOWcpNBBHYXw3hcZdzY6QHvoeOWhg==",
+      "Name": "SCLAB-DomainJoin",
+      "LastModified": "2016-08-17 17:04:15Z"
+    },
+    {
+      "Username": "svc-aza@microsoft.com",
+      "Password": "XsTzvdl2BBz4CzHZ45b9um2huXJKRVvRtSqIzDj6qPsjGiy90/pa/IvfYnHOVAcg8QtGCtOWFBUwpv//ksLaNpuJBl8FRlUMrfKQZjH8DoTXmNqkCrHj4c4zlFi3yYLoUZIFqFF0DWS3CWc2u7a6oJdH7ngxt7JfuyY45j9MB+X9XT+Xc8wMqN42QjmCVJRP5I18AVPweBzmB/OMuKrZJoqGtqRuE/JfOqwefDnSeVc+lBRvTMxbv54IRgaQvGT2EblWyknj1/Fv66hakT0Z9r6M6TuMGaUxqtOKO7qEslNjGc9aYaKHJzqhSXQgE8MIc3n4kh+e85uewD/FvrCoDA==",
+      "Name": "AzureAutomation",
+      "LastModified": "2016-12-12 12:58:36Z"
+    }
+  ],
+  "Connection": [
+    {
+      "ValueFields": {
+        "AutomationCertificateName": "ConnectionPK",
+        "SubscriptionID": "47b34701-7162-409d-8674-7c3e22fa0104"
+      },
+      "ConnectionType": "Azure",
+      "Name": "ContosoDemo",
+      "LastModified": "2016-01-28 14:36:18Z"
+    }
+  ],
+  "Variable": [
+    {
+      "Value": "L4bMQbA0RtNLuv8qQO5gqFEaWCqT3qs7XyF3o0b5+C4ry7A8ayc2yQ4Tgl8Wri2J+UDfzapUYiRFNfnhTTsoeAZbvOs0DCcGFhVcrlETvGFGTvEvVAKVQwDxE2+Ac2wJct2WueWKQEIM0PlpCKxSuufuXJZb7kfvKZ/BHmHvSUUmsEGEZVCHOQeHRonsZwZi9e1+9d9FMhybh959rvkzWUgiz8lLdjymL7jg4k2epTFsF66y6G4TJJbMlmWGFlKhT0XxgPa09jd0gQKo7Lp6+BmTybbbz2/u1S4qB0PgNZifTEve+H4pFjl4+3PhmDmKHbBoHDbdCwxWUnkS+ILMWg==",
+      "Encrypted": true,
+      "Name": "dscregistrationkey",
+      "LastModified": "2016-06-23 15:38:38Z"
+    },
+    {
+      "Value": "kJDDNbOKdQATAdMw9Ibr3IE2TbcvOkeFJ3zZYwQynfpBkzT3aWHGFLMgx4cokiY4u+qbWxehJsw8xTsiOgxGMKlt54DwK57fnM81Kj+bLI3q8iI4ePk0k2f9FudXpQQOKfzfroUS2WGsK24TXn8BISWk0MBJByz9kjAjKjpFZWosTUN99NWOham2tz7l/oaHNsb03N4mn3a8jCslcoCbTWY/EfFyeHjNsBDu6METS60Yso6JSzj5Wn8YtVbqyLrA2Cns26OAL/Z6KaYEfzVHX5ylAj/1XoxkUIcds5y+8aSUCkESLGAcf454VqQI0KyBL6Uas7uWwq4HrNVTmcNk7g==",
+      "Encrypted": true,
+      "Name": "mmawskey",
+      "LastModified": "2016-06-23 15:38:43Z"
+    },
+    {
+      "Value": "d7kQ6kMugFqckXXOFAGiuI8W50I0LVpOxS5VfDfSoyctOeTIH76i0F+WxNwE+M76kiTFGC2vHLakq+Qk+GhfvrVq2HlJtSosg9W+mdtedYVTFYdfXaTmNLzjYGFrLOcB4mlRAqhi7yFodksDG0eV8fAuirJ1ifDC7YnIv+xqEmLqZPq9U0uKSvzHbeN4acPHxgTUU86YFNTOpogH26TrNvbQ4wvFKCO1AY28jpSfkWGFjomrULAa4U96nbK3WiFegk2wROv6ycfDC9WHtxmGWJtV5lszXTYCo/UTgJFHvRdoCrh73pbgRSjDlPOyY0iOmZUFQPRTTjYuxyifcAZ37w==",
+      "Encrypted": true,
+      "Name": "vmAdminPW",
+      "LastModified": "2016-06-23 18:15:51Z"
+    },
+    {
+      "Value": "Ev+IEaIDqDhkQzM9U1K7OPYGukGRLZxNflNNjm06oTjbFMw83vH0p3MT9CnTJ8zCtbwa4YlsZlNDCmBpbnXfzLvNwudckvaoiwyFLZso0vNRcNrAmHfkSDaxwfMq2foI0R6k1E1vqd6E+NTqw54PIkBQ1QbmiYFzcIYnGEfOrRq4k8+KwWQGfU0UYf6kkqAWn88JP7RrbJBhMrQueC1YNGtQr0outFYpEr+6DGHIFTjZnQAtOV27JF3ksMEgsGzP1tIWK7FWGh5I5Cje9u36unpous2VxHCUmyDVlzI1VMG1yPiDifYZyO9QshGmv929H9zN9nvTebkEAchslhxlDw==",
+      "Encrypted": true,
+      "Name": "domainjoinpw",
+      "LastModified": "2016-07-25 15:39:47Z"
+    }
+  ],
+  "Certificate": []
+}

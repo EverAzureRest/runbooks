@@ -19,10 +19,6 @@ $subnetname,
 [Parameter(Mandatory=$True)]
 $vnetResourceGroupName,
 [Parameter(Mandatory=$True)]
-$storageAccountName,
-[Parameter(Mandatory=$True)]
-$premiumStorageAccount,
-[Parameter(Mandatory=$True)]
 $subscriptionName,
 [Parameter(Mandatory=$True)]
 $deploymentlocation
@@ -52,9 +48,7 @@ $paramhash = @{
               'timestamp' = $timestamp;
               'subnetname' = $subnetname;
               'virtualNetworkName' = $virtualNetworkName;
-              'virtualNetworkResourceGroup' = $vnetResourceGroupName;
-              'storageAccountName' = $storageAccountName;
-              'premiumStorageAccountName' = $premiumStorageAccount
+              'virtualNetworkResourceGroup' = $vnetResourceGroupName
                }
                
 $cred = Get-AutomationPSCredential -Name "AzureAutomation"

@@ -47,11 +47,11 @@ $paramhash = @{
               'adminUsername' = "powerhellda";
               'vmNamePrefix' = $vmNamePrefix;
               'workspaceid' = "$($mmawsid)";
-              'workspacekey' = "$($mmswskey)";
+              'workspacekey' = "+zHnAbUCYjduvU2sjCOKRavppLHclExNemTZ0MfVxPr3z3xVp/zMeqOXWzB3Z4b7vhtP3cz/nQFqL10BNdfo8Q==";
               'numberOfInstances' = $numberofVMinstances;
               'nodeConfigurationName' = $DSCNodeConfigurationName;
-              'registrationURL' = $dscurl;
-              'registrationkey' = "$($dsckey)";
+              'registrationURL' = "$($dscurl)";
+              'registrationkey' = "kO87VoTWo1VKfUWYCQVTnAJ93ONMv7EKlB1xNWSpf/+JP/VzmKCn4NXJniFcGdjh3rfJVETynoKyvcuF9O6HeQ==";
               'adminPassword' = "$($apw)";
               'imageSKU' = $OSVersion;
               'timestamp' = $timestamp;

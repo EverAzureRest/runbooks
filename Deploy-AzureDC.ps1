@@ -29,10 +29,11 @@ $deploymentlocation
 
 $templateuri = "https://raw.githubusercontent.com/lorax79/AzureTemplates/master/avm-base-DC.json"
 
-$omsWSName = Get-AutomationVariable -Name "omsworkspacename"
+$mmawsid = Get-AutomationVariable -Name "mmawsid"
+$mmswskey = Get-AutomationVariable -Name "mmawskey"
 $dscurl = Get-AutomationVariable -Name "dscregistrationurl"
 $dsckey = Get-AutomationVariable -Name "dscregistrationkey"
-$localadmin = Get-AutmationVariable -Name "dauser"
+$localadmin = Get-AutomationVariable -Name "dauser"
 
 [string]$timestamp = (get-date -Format "MM/dd/yyyy H:mm:ss tt")
 $apw = Get-AutomationVariable -Name "vmAdminPW" 
@@ -43,13 +44,14 @@ if ($DCRole -eq "BDC")
 
 
 $paramhash = @{
-              'adminUsername' = $localadmin;
+              'adminUsername' = "powerhellda";
               'vmNamePrefix' = $vmNamePrefix;
-              'workspaceName' = $omsWSName
+              'workspaceid' = "$($mmawsid)";
+              'workspacekey' = "$($mmswskey)";
               'numberOfInstances' = $numberofVMinstances;
               'nodeConfigurationName' = $DSCNodeConfigurationName;
               'registrationURL' = $dscurl;
-              'registrationkey' = $dsckey;
+              'registrationkey' = "$($dsckey)";
               'adminPassword' = "$($apw)";
               'imageSKU' = $OSVersion;
               'timestamp' = $timestamp;

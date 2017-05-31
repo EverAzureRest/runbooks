@@ -21,8 +21,6 @@ $subnetname,
 [Parameter(Mandatory=$True)]
 $vnetResourceGroupName,
 [Parameter(Mandatory=$True)]
-$storageAccountName,
-[Parameter(Mandatory=$True)]
 $subscriptionName,
 [Parameter(Mandatory=$True)]
 $deploymentlocation
@@ -33,14 +31,7 @@ $templateuri = "https://raw.githubusercontent.com/lorax79/AzureTemplates/master/
 
 [string]$timestamp = (get-date -Format "MM/dd/yyyy H:mm:ss tt")
 $apw = Get-AutomationVariable -Name "vmAdminPW" 
-if ($DomainToJoinFQDN -eq "lab.contoso.com")
-    {
-    $dpw = Get-AutomationVariable -Name "domainjoinpw"
-    }
-elseif ($DomainToJoinFQDN -eq "powerhell.org")
-    {
-    $dpw = Get-AutomationVariable -Name "phdomainjoinpw"
-    }
+$dpw = Get-AutomationVariable -Name "domainjoinpw"
 
 $paramhash = @{
               'adminUsername' = "LocalAdmin";

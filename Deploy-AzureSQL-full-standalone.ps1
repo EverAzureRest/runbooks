@@ -29,20 +29,15 @@ $templateuri = "https://raw.githubusercontent.com/lorax79/AzureTemplates/master/
 
 [string]$timestamp = (get-date -Format "MM/dd/yyyy H:mm:ss tt")
 $apw = Get-AutomationVariable -Name "vmAdminPW" 
-$regkey = Get-AutomationVariable -Name "dscregistrationkey"
-$mmawsid = Get-AutomationVariable -Name "mmawsid"
-$mmswskey = Get-AutomationVariable -Name "mmawskey"
 
 
 $paramhash = @{
               'adminUsername' = "LocalAdmin";
               'vmNamePrefix' = $vmNamePrefix;
-              'workspaceid' = "$($mmawsid)";
-              'workspacekey' = "$($mmswskey)";
               'numberOfInstances' = $numberofVMinstances;
               'nodeConfigurationName' = $DSCNodeConfigurationName;
               'registrationURL' = "https://eus2-agentservice-prod-1.azure-automation.net/accounts/61fcc721-4107-4150-ad71-e4c1f53b7559";
-              'registrationkey' = "$($regkey)";
+              'registrationkey' = "kO87VoTWo1VKfUWYCQVTnAJ93ONMv7EKlB1xNWSpf/+JP/VzmKCn4NXJniFcGdjh3rfJVETynoKyvcuF9O6HeQ==";
               'adminPassword' = "$($apw)";
               'imageSKU' = $OSVersion;
               'timestamp' = $timestamp;

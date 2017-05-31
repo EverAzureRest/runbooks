@@ -1,4 +1,3 @@
-﻿
 param(
 [Parameter(Mandatory=$True)]
 $deploymentName,
@@ -48,8 +47,7 @@ $paramhash = @{
               'timestamp' = $timestamp;
               'subnetname' = $subnetname;
               'virtualNetworkName' = $virtualNetworkName;
-              'virtualNetworkResourceGroup' = $vnetResourceGroupName;
-              'storageAccountName' = $storageAccountName
+              'virtualNetworkResourceGroup' = $vnetResourceGroupName
                }
                
 $cred = Get-AutomationPSCredential -Name "AzureAutomation"
@@ -62,5 +60,3 @@ if (!($rg))
     }
 
 New-AzureRmResourceGroupDeployment -ResourceGroupName $ResourceGroupName -Name $deploymentName -Mode Incremental -TemplateFile $templateuri -TemplateParameterObject $paramhash
-
- 

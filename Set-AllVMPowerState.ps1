@@ -4,11 +4,32 @@ $subscriptionName,
 [bool]$stop
 )
 
-$credential = Get-AutomationPSCredential -Name "AzureAutomation"
+#Login as ServicePrincipal
+$connectionName = "AzureRunAsConnection"
+try
+{
+    # Get the connection "AzureRunAsConnection "
+    $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName         
 
-Login-AzureRmAccount -Credential $credential
+    "Logging in to Azure..."
+    Add-AzureRmAccount `
+        -ServicePrincipal `
+        -TenantId $servicePrincipalConnection.TenantId `
+        -ApplicationId $servicePrincipalConnection.ApplicationId `
+        -CertificateThumbprint $servicePrincipalConnection.CertificateThumbprint 
+}
+catch {
+    if (!$servicePrincipalConnection)
+    {
+        $ErrorMessage = "Connection $connectionName not found."
+        throw $ErrorMessage
+    } else{
+        Write-Error -Message $_.Exception
+        throw $_.Exception
+    }
+}
 
-Get-AzureRmSubscription -SubscriptionName $subscriptionName | Select-AzureRmSubscription
+Set-AzureRmContext -SubscriptionName $subscriptionName
 
 $resourcegroups = get-AzureRmResourceGroup
 

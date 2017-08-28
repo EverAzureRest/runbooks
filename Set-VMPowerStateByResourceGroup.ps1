@@ -35,8 +35,8 @@ Set-AzureRmContext -SubscriptionName $subscriptionName
 
 
 if ($stop -eq $true){
-    Stop-AzureRmVM -ResourceGroupName $resourcegroupName -Force
+   Get-AzureRmVM -ResourceGroupName $resourcegroupName | Stop-AzureRmVM -ResourceGroupName $resourcegroupName -Force
 }
 elseif ($start -eq $true){
-    Start-AzureRmVM -ResourceGroupName $resourcegroupName
+    Get-AzureRmVM -ResourceGroupName $resourcegroupName | Start-AzureRmVM -ResourceGroupName $resourcegroupName
 } 

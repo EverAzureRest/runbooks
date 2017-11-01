@@ -9,7 +9,7 @@ if ($WebhookData -ne $null) {
     $subscriptionName = $params.subscriptionName
     $WorkspaceName = $params.WorkspaceName
     $StorageAccountName = $params.storageAccountName
-    $storageInsightsName = "$StorageAccountName'+'$WorkspaceName"
+    $storageInsightsName = "$StorageAccountName"+"$WorkspaceName"
 
     Write-Output $subscriptionName
     Write-Output $WorkspaceName

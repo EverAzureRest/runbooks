@@ -9,10 +9,12 @@ if ($WebhookData -ne $null) {
     $subscriptionName = $params.subscriptionName
     $WorkspaceName = $params.WorkspaceName
     $StorageAccountName = $params.storageAccountName
+    $storageInsightsName = "$StorageAccountName'+'$WorkspaceName"
 
     Write-Output $subscriptionName
     Write-Output $WorkspaceName
     Write-Output $StorageAccountName
+    Write-Output $storageInsightsName
 
 }
 else {
@@ -87,7 +89,7 @@ catch {
 
 if ($workspace -ne $null -and $StorageAccountName -ne $null)
     {
-    Remove-AzureRmOperationalInsightsStorageInsight -ResourceGroupName $workspace.ResourceGroupName -WorkspaceName $workspace.Name -Name $StorageAccountName -Force
+    Remove-AzureRmOperationalInsightsStorageInsight -ResourceGroupName $workspace.ResourceGroupName -WorkspaceName $workspace.Name -Name $storageInsightsName -Force
     }
 else 
     {

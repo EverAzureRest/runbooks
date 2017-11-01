@@ -1,10 +1,10 @@
-﻿param(
+param(
 [object]$WebhookData
 )
 
 if ($WebhookData -ne $null) {
 
-    $params = $WebhookData.RequestBody | Convert-From JSON
+    $params = $WebhookData.RequestBody | ConvertFrom-JSON
 
     $subscriptionName = $params.subscriptionName
     $WorkspaceName = $params.WorkspaceName
@@ -35,7 +35,7 @@ try
 
     "Logging in to Azure..."
 
-    Add-AzureRmAccount -ServicePrincipal TenantId $servicePrincipalConnection.TenantId -ApplicationId $servicePrincipalConnection.ApplicationId -CertificateThumbprint $servicePrincipalConnection.CertificateThumbprint 
+    Add-AzureRmAccount -ServicePrincipal -TenantId $servicePrincipalConnection.TenantId -ApplicationId $servicePrincipalConnection.ApplicationId -CertificateThumbprint $servicePrincipalConnection.CertificateThumbprint 
 }
 
 catch {
@@ -93,4 +93,4 @@ else
     {
     write-error -Message "The OMS Workspace $WorkspaceName, or the Storage Account $StorageAccountName could not be found - Please make sure the Workspace Name is correct and you are targeting the correct subscription"
     throw $_.Exception
-    } 
+    }

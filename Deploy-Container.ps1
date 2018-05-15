@@ -2,9 +2,9 @@ workflow Deploy-Container
 {
 
 
-$storagecred = New-Object -typename pscredential -ArgumentList @{"Username" = "sclabapkj6n2tobyrs"; "Password" = "f4SAV7mCffOPT3F/Po3475IV/rTRaO389Kr2RZMkuS9s2Uzizkh6dxSMUVuyPvp408jYfoNZVYvuysnxwhQSjQ=="}
+$storagecred = New-Object -typename pscredential -ArgumentList @{"Username" = "$parameter"; "Password" = "$parameter"}
 
-Copy-Item \\sclabapkj6n2tobyrs.file.core.windows.net\sclab\NikeApp.zip -Credential $storagecred -Destination \\cont0-0\NikeApp.zip
+Copy-Item \\$parameter.file.core.windows.net\sclab\NikeApp.zip -Credential $storagecred -Destination \\cont0-0\NikeApp.zip
 
 
 $deploy = {

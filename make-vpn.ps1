@@ -47,6 +47,7 @@ catch {
 
 Import-Module -Name AzureRM.KeyVault
 $vpnPass = (Get-AzureKeyVaultSecret -VaultName (Get-AutomationVariable -Name keyvaultName) -Name vpnpass).SecretValueText
+$dnsLabel = Get-AutomationVariable -Name "DNSLabel"
 $resourceGroupName = "opensocks"
 $containerName = "opensocks"
 $containerImage = "oddrationale/docker-shadowsocks"
@@ -58,7 +59,7 @@ if ($action -icontains "start")
      try 
         {
         New-AzureRmResourceGroup -Name $resourceGroupName -Location $region
-        New-AzureRmContainerGroup -ResourceGroupName $resourceGroupName -Location $region -Name $containerName -Image $containerImage -IpAddressType Public -Command $command -Port 8388 -DnsNameLabel "yetishadow"
+        New-AzureRmContainerGroup -ResourceGroupName $resourceGroupName -Location $region -Name $containerName -Image $containerImage -IpAddressType Public -Command $command -Port 8388 -DnsNameLabel $dnsLabel
         }
     catch 
         {

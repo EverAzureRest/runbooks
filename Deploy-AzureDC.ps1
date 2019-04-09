@@ -1,13 +1,9 @@
 ﻿
 param(
 [Parameter(Mandatory=$True)]
-$deploymentName,
-[Parameter(Mandatory=$True)]
 $ResourceGroupName,
 [Parameter(Mandatory=$True)]
 $vmNamePrefix,
-[Parameter(Mandatory=$True)]
-$DscNodeConfigurationName,
 [Parameter(Mandatory=$True)]
 $DCRole,
 [Parameter(Mandatory=$True)]
@@ -23,41 +19,46 @@ $vnetResourceGroupName,
 [Parameter(Mandatory=$True)]
 $subscriptionName,
 [Parameter(Mandatory=$True)]
-$deploymentlocation
+$deploymentlocation,
+[Parameter(Mandatory=$True)]
+$keyVaultName
 )
 
 
-$templateuri = "https://raw.githubusercontent.com/lorax79/AzureTemplates/master/avm-base-DC.json"
+$templateuri = "https://raw.githubusercontent.com/EverAzureRest/AzureTemplates/master/avm-base-DC.json"
 
-$mmawsid = Get-AutomationVariable -Name "mmawsid"
+$mmawsid = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -n "omsworkspaceid").SecretValueText
 $mmswskey = Get-AutomationVariable -Name "mmawskey"
-$dscurl = Get-AutomationVariable -Name "dscregistrationurl"
-$dsckey = Get-AutomationVariable -Name "dscregistrationkey"
-$localadmin = Get-AutomationVariable -Name "dauser"
-
+$dscurl = "https://eus2-agentservice-prod-1.azure-automation.net/accounts/d506ffba-1bf5-409d-a317-751a2c68f0d4"
+$dsckey = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -Name "dscregistrationkey").SecretValueText
+$apw = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -Name "domainAdminpw").SecretValueText
+$domainadmin = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -Name "domainAdmin").SecretValueText
+$DscNodeConfigurationName = Domain
 [string]$timestamp = (get-date -Format "MM/dd/yyyy H:mm:ss tt")
-$apw = Get-AutomationVariable -Name "vmAdminPW" 
+$deploymentName = 'DCdeployment' + (get-date -Format "yyyy.dd.MM.H.mm.ss")
+
+<# 
 if ($DCRole -eq "BDC")
     {
     $dpw = Get-AutomationVariable -Name "domainjoinpw"
     }
-
+#>
 
 $paramhash = @{
-              'adminUsername' = "powerhellda";
-              'vmNamePrefix' = $vmNamePrefix;
-              'workspaceid' = "$($mmawsid)";
-              'workspacekey' = "+zHnAbUCYjduvU2sjCOKRavppLHclExNemTZ0MfVxPr3z3xVp/zMeqOXWzB3Z4b7vhtP3cz/nQFqL10BNdfo8Q==";
-              'numberOfInstances' = $numberofVMinstances;
-              'nodeConfigurationName' = $DSCNodeConfigurationName;
-              'registrationURL' = "$($dscurl)";
-              'registrationkey' = "kO87VoTWo1VKfUWYCQVTnAJ93ONMv7EKlB1xNWSpf/+JP/VzmKCn4NXJniFcGdjh3rfJVETynoKyvcuF9O6HeQ==";
-              'adminPassword' = "$($apw)";
-              'imageSKU' = $OSVersion;
-              'timestamp' = $timestamp;
-              'subnetname' = $subnetname;
-              'virtualNetworkName' = $virtualNetworkName;
-              'virtualNetworkResourceGroup' = $vnetResourceGroupName;
+              adminUsername = $domainAdmin
+              vmNamePrefix = $vmNamePrefix
+              workspaceid = $mmawsid
+              workspacekey = 
+              numberOfInstances = $numberofVMinstances
+              nodeConfigurationName = $DSCNodeConfigurationName
+              registrationURL = $dscurl
+              registrationkey = $dscurl
+              adminPassword = $apw
+              imageSKU = $OSVersion
+              timestamp = $timestamp
+              subnetname = $subnetname
+              virtualNetworkName = $virtualNetworkName
+              virtualNetworkResourceGroup = $vnetResourceGroupName
                }
                
 $cred = Get-AutomationPSCredential -Name "AzureAutomation"

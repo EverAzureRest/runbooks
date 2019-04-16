@@ -27,8 +27,8 @@ $keyVaultName
 
 $templateuri = "https://raw.githubusercontent.com/EverAzureRest/AzureTemplates/master/avm-base-DC.json"
 
-$mmawsid = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -n "omsworkspaceid").SecretValueText
-$mmswskey = Get-AutomationVariable -Name "mmawskey"
+$mmawsid = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -n "workspaceid").SecretValueText
+$mmswskey = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -n "workspacekey").SecretValueText
 $dscurl = "https://eus2-agentservice-prod-1.azure-automation.net/accounts/d506ffba-1bf5-409d-a317-751a2c68f0d4"
 $dsckey = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -Name "dscregistrationkey").SecretValueText
 $apw = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -Name "domainAdminpw").SecretValueText
@@ -48,11 +48,11 @@ $paramhash = @{
               adminUsername = $domainAdmin
               vmNamePrefix = $vmNamePrefix
               workspaceid = $mmawsid
-              workspacekey = 
+              workspacekey = $mmswskey
               numberOfInstances = $numberofVMinstances
               nodeConfigurationName = $DSCNodeConfigurationName
               registrationURL = $dscurl
-              registrationkey = $dscurl
+              registrationkey = $dsckey
               adminPassword = $apw
               imageSKU = $OSVersion
               timestamp = $timestamp

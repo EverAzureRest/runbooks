@@ -56,3 +56,5 @@ $ConfigData = @{
 
 
 Start-AzureRmAutomationDscCompilationJob -ResourceGroupName $AutomationAccountRG -AutomationAccountName $AutomationAccountName -ConfigurationName "Domain" -ConfigurationData $ConfigData -Parameters $Params
+
+exit

@@ -34,7 +34,7 @@ catch {
 }
 
 $dacred = New-Object System.Management.Automation.PSCredential((Get-AzureKeyVaultSecret -Name domainadmin -vaultname $KeyVaultName).SecretValueText,(Get-AzureKeyVaultSecret -Name domainadminpw -vaultname $KeyVaultName).SecretValue)
-$sfmpass = (Get-AzureKeyVaultSecret -Name domainadminpw -vaultname $KeyVaultName).SecretValue
+$sfmpass = (Get-AzureKeyVaultSecret -Name domainadminpw -vaultname $KeyVaultName).SecretValueText
 $Params = @{
     domain = $domainFQDN
     dacred = $dacred
